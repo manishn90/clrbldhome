@@ -5,18 +5,14 @@ $yourEmail = 'manish@colorblindlabs.com'; // Your Email Address that messages wi
 $siteName = 'ColorblindLabs'; // For subject line of email to you - will display as 'YourSiteName - Message from Bill Bloggs'
 
 
-
-
-
-
 // **** SETTINGS FOR SUBSCRIBE FORM ****
 // Choose a method for the subscribed email addresses to be saved or sent. You can choose both options to be used at the same time, i.e. store in MySQL and email you.
 
 // To save email addresses into MySQL Server, set the following variable to 'true' and add in your MySQL connection settings below. Settings this to 'false' will disable all usage of MySQL, such as checking if addresses is already subscribed.
-$saveToMySQL = 'true';
+$saveToMySQL = 'false';
 
 // To receive an email notification containing subscribed address (i.e. Joe Bloggs has subscribed, email address: joe@bloggs.net), set the following variable to 'true' and add in your email notification settings below
-$sendToEmail = 'false';
+$sendToEmail = 'true';
 	
 // To subscribe the given email address to your MailChimp list, set the following variable to 'true' and update your MailChimp settings belowl
 $mailChimpList = 'false';

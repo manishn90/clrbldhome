@@ -42,6 +42,7 @@ include('settings.php');
 					}
 				}
 			
+			
 				if(!isset($hasError)) {
 			
 					$emailTo = $yourEmail;
