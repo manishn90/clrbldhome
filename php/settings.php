@@ -1,7 +1,7 @@
 <?php
 
 // **** SETTINGS for CONTACT FORM ****
-$yourEmail = 'manish@colorblindlabs.com'; // Your Email Address that messages will be sent to
+$yourEmail = 'bayu@colorblindlabs.com'; // Your Email Address that messages will be sent to
 $siteName = 'ColorblindLabs'; // For subject line of email to you - will display as 'YourSiteName - Message from Bill Bloggs'
 
 
@@ -12,10 +12,10 @@ $siteName = 'ColorblindLabs'; // For subject line of email to you - will display
 $saveToMySQL = 'false';
 
 // To receive an email notification containing subscribed address (i.e. Joe Bloggs has subscribed, email address: joe@bloggs.net), set the following variable to 'true' and add in your email notification settings below
-$sendToEmail = 'true';
+$sendToEmail = 'false';
 	
 // To subscribe the given email address to your MailChimp list, set the following variable to 'true' and update your MailChimp settings belowl
-$mailChimpList = 'false';
+$mailChimpList = 'true';
 
 
 // MySQL Connection Settings
@@ -51,10 +51,10 @@ $emailFrom = "Glacial Under Construction <hello@emailofmysite.com>";
 // Change these details according to information available from your MailChimp account - see documentation for more help
 
 // Enter your MailChimp API Key - see http://admin.mailchimp.com/account/api
-$apikey = 'API KEY HERE';
+$apikey = '7e387a5a5c62cc94ea229ccfd5dfec44-us9';
 
 // List ID is required in order to decide which of your lists to subscribe users to. This can be found by loggin into your MailChimp account and by going to Lists --> List Tools, and List ID entry at bottom of page. See Documentation for more info
-$listId = 'LIST ID HERE';
+$listId = 'subscribers';
 
 
 
