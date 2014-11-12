@@ -1,147 +1,74 @@
 <!DOCTYPE html>
-
 <html lang="en">
-	
-	<head>
-		<title>Colorblind Labs</title>
-		
-		<meta charset=utf-8>
-		<meta name="viewport" content="width=device-width, initial-scale = 1.0, maximum-scale = 1.0, user-scalable=no">
 
-		<link rel="stylesheet" type="text/css" href="css/style.css" />
-		<link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Lato:300,400,900%7CGrand+Hotel" />
-		<link rel="stylesheet" href="font-awesome/css/font-awesome.min.css" />
-		
-		<!-- Favicon -->
-		<link rel="shortcut icon" href="img/favicon.png">
-	</head>
-	
-	<body>
+<head>
+    <head profile="http://www.w3.org/2005/10/profile">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
 
-		
-		<!-- BEGIN CONTACT -->
-		<div class="section-contact">
-			<div class="mini-container overlay-container">
-				<h2 class="section-title">Get in touch</h2>
-				<div class="contact-box-container">
-					<div class="contact-box left">
-						We produce sexy UI and web design. We do everything from logos to advertising to tiny mobile apps to full blown webbies. Drop us a message and one of us will get back to you in less than 24 hours.
-						<ul>
-							<li><i class="fa fa-fw fa-map-marker"></i>Red Dot Traffic Building, Singapore</li>
-							<li><i class="fa fa-fw fa-phone"></i>(+62) 812 9334 8563</li>
-							<li><i class="fa fa-fw fa-phone"></i>(+65) 9147 9500</li>
-							<li><i class="fa fa-fw fa-envelope-o"></i><a href="mailto:">manish@colorblindlabs.com</a></li>
-							<li><i class="fa fa-fw fa-globe"></i><a href="">colorblindlabs.com</a></li>
-						</ul>
-					</div>
-					<div class="contact-box-spacer"></div>
-					<div class="contact-box right">
-					<div id="contact-success"><!-- Success Message --><i class="fa fa-check"></i>Your email was sent. Thanks!</div>
-						<form id="contact-us" action="php/contact.php?action=contact" method="post">
-							<!-- Anti-spam input, do not delete! --><input type="text" class="antispam" name="friendlyUrl" /><!-- Anti-spam input, do not delete! -->
-							<input type="text" class="contact-form-input requiredField" id="contactName" name="contactName" placeholder="Name" />
-							<input type="email" class="contact-form-input requiredField email" id="email" name="email" placeholder="Email" />
-							<textarea class="contact-form-input message-box requiredField" placeholder="Message" name="comments" id="commentsText"></textarea>
-							<input type="submit" name="submit" id="contact-button" value="Send" />
-							<div class="contact-loading">
-								<div class="loading"></div>
-							</div>
-							<input type="hidden" name="submitted" id="submitted" value="true" />
-							<div class="contact-response"><!-- Error Message -->Please fix the errors and try again.</div>
-						</form>
-					</div>
-				</div>
-			</div>
-		</div>
-		<!-- END CONTACT -->
-		
-		<!-- BEGIN FOOTER -->
-		<div class="section-footer">
-			<div class="mini-container">
-				<div class="footer-container">
-				<!-- 	<div class="footer-block">
-						 <a href="" target="_blank" class="footer-social"><i class="fa fa-fw fa-twitter"></i></a>
-						<a href="" target="_blank" class="footer-social"><i class="fa fa-fw fa-facebook"></i></a>
-						<a href="" target="_blank" class="footer-social"><i class="fa fa-fw fa-dribbble"></i></a> 
-					</div> -->
-					
-					<div class="footer-block-middle">
-						<a href="#top" class="scroll footer-img"><img src="images/logo2.png" alt="Glacial Logo" /></a>
-					</div>
-				
-				</div>
-			</div>
-		</div>
-		<!-- END FOOTER -->
-		
-		<!-- Background Video container -->
-		<a id="bgndVideo" class="player"></a>
-		
-		<!-- Loading Page Overlay -->
-		<div class="page-loading">
-			<noscript><div class="noscript-error">Enable JavaScript to see this site working properly.</div></noscript>
-			<div class="loading"></div>
-		</div>
+    <title>Colorblind Labs Design Studio Singapore</title>
+   
 
-		<!-- JAVASCRIPT -->
-		<script type="text/javascript" src="js/jquery.js"></script>
-			
-			<!-- All set up / customisation variables for slideshow and video background etc. in custom.js file -->
-			<script type="text/javascript" src="js/custom.js"></script>
-		
-		<script type="text/javascript" src="js/countdown.js"></script>
-		<script type="text/javascript" src="js/emailsubscribe.js"></script>
-		<script type="text/javascript" src="js/contact.js"></script>
-		<script type="text/javascript" src="js/jquery.backstretch.min.js"></script>
-		<script type="text/javascript" src="js/jquery.mb.YTPlayer.js"></script>
-		<script type="text/javascript" src="js/smoothscroll.js"></script>
-		
-		<script type="text/javascript">
-			$(document).ready(function(){
-				
-				// No need to edit here - all settings in custom.js file
-				
-				var titleHeight = ($('.title').height()) / 2;
-				$('.title').css("margin-top", "-" + titleHeight + "px");
-				if(videoBackground == 'on') {			
-				    if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
-						$(".player").hide();
-						$.backstretch(slideshowBackgroundURLS, {
-			    	    	fade: slideshowFade,
-			    	   		duration: slideshowDuration
-			    		});
-			    		$('.backstretch img').load(function(){
-							$('.page-loading').delay(1000).fadeOut(1000);
-						});
-					}
-					else {
-						$(".player").mb_YTPlayer({
-							videoURL: videoBackgroundURL,
-							containment: 'body',
-							autoPlay: true,
-							mute: videoMuted,
-							startAt:0,
-							opacity:1
-						});
-						$('#bgndVideo').on("YTPStart",function(){
-   							$('.page-loading').delay(1000).fadeOut(1000);
-						});
-						
-						if(videoMuted == false) {
-							$('.videoMuteButton').show();
-						}
-					}
-				}
-				else {
-					$.backstretch(slideshowBackgroundURLS, {
-			    	    fade: slideshowFade,
-			    	    duration: slideshowDuration
-			    	});
-			    	$('.backstretch img').load(function(){
-						$('.page-loading').delay(1000).fadeOut(1000);
-					});
-				}
-			});
-		</script>
-	</body>
+    <!-- Favicon -->
+
+    <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="images/favicon.ico" type="image/x-icon">
+
+
+    <!-- Bootstrap Core CSS -->
+    <link href="css/bootstrap.css" rel="stylesheet">
+
+
+    <!-- Custom CSS -->
+    <style>
+    body {
+        padding-top: 70px;
+        /* Required padding for .navbar-fixed-top. Remove if using .navbar-static-top. Change if height of navigation changes. */
+    }
+    </style>
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+</head>
+
+<body>
+
+    <!-- Page Content -->
+    <div class="container">
+
+        <div class="row" id="mainrow">
+            <div class="col-lg-6 text-center" id="logocolumn">
+              <img src="images/logo.png" width="80%" id="logoimage">
+            </div>
+            <div class="col-lg-6 text-justify" id="maintext">
+                <p>
+                    <b>colorblind labs</b> is a design and visual communications studio based in SIngapore. We help our clients express themselves and their products through iconic design. We believe in a modern, clean composition philosophy.
+                    Our expertise are in brand, packaging, web, and interactive design. 
+
+                <br/><br/>
+                    We love listening to stories, feel free to contact us at manish@colorblindlabs.com and we can talk about your story and how we can help you grow it further.
+                </p>
+            </div>
+
+        </div>
+        <!-- /.row -->
+    </div>
+    <!-- /.container -->
+
+    <!-- jQuery Version 1.11.1 -->
+    <script src="js/jquery.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="js/bootstrap.min.js"></script>
+
+</body>
+
 </html>
